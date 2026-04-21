@@ -1,9 +1,9 @@
 <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden">
     <a href="{{ url('/posts/' . $post->id) }}" class="block">
         @if ($post->image_path)
-            <img src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-full h-48 object-cover">
+            <img src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-full h-32 object-cover">
         @else
-            <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+            <div class="w-full h-32 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                 <span class="text-gray-400">Pas d'image</span>
             </div>
         @endif
