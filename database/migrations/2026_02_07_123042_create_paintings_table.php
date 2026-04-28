@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('title')->nullable();
+            $table->string('image_path')->nullable();
             $table->text('description')->nullable();
+            $table->string('dimensions')->nullable();
+            $table->unsignedSmallInteger('year')->nullable(); //unsigned pour ne pas aller dans les négatifs
             $table->timestamps();
         });
     }

@@ -111,6 +111,10 @@ return [
                     'label' => 'Nom',
                     'placeholder' => 'Entrez votre nom',
                 ],
+                'description' => [
+                    'label' => 'Description',
+                    'placeholder' => 'Décrivez votre œuvre...',
+                ],
             ],
             'actions' => [
                 'submit' => 'Sauvegarder',
@@ -228,6 +232,8 @@ return [
             'description' => '":painting_title" par :first_name :last_name.',
             'description_without_painting_title' => 'Œuvre de :first_name :last_name.',
             'author' => 'Œuvre de :first_name :last_name',
+            'dimensions' => 'Dimensions :dimensions',
+            'year' => 'Année :year',
         ],
     ],
 ];

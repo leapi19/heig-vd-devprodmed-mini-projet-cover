@@ -37,6 +37,8 @@ class PaintingController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:5000',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'dimensions' => 'nullable|string|max:50',
+            'year' => 'nullable|integer|min:1800|max:2026',
         ]);
 
         $user = $request->user();
@@ -44,7 +46,8 @@ class PaintingController extends Controller
 
         $painting->title = $validated['title'];
         $painting->description = $validated['description'];
-
+        $painting->dimensions = $validated['dimensions'];
+        $painting->year = $validated['year'];
         // Upload de l'image
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('artworks', 'public');
@@ -101,6 +104,8 @@ class PaintingController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:5000',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'dimensions' => 'nullable|string|max:50',
+            'year' => 'nullable|integer|min:1800|max:2026',
         ]);
 
         $painting = Painting::findOrFail($id);
@@ -109,6 +114,8 @@ class PaintingController extends Controller
 
         $painting->title = $validated['title'];
         $painting->description = $validated['description'];
+        $painting->dimensions = $validated['dimensions'];
+        $painting->year = $validated['year'];
 
         // Gestion de la nouvelle image
         if ($request->hasFile('image')) {
