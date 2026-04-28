@@ -73,6 +73,19 @@
             </p>
         </div>
 
+        <div class="mb-4">
+            @if ($painting->dimensions)
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    {{ __('ui.paintings.show.dimensions', ['dimensions' => $painting->dimensions]) }}
+                </p>
+            @endif
+            @if ($painting->year)
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    {{ __('ui.paintings.show.year', ['year' => $painting->year]) }}
+                </p>
+            @endif
+        </div>
+
         <footer class="pt-4 border-t border-gray-200 dark:border-gray-700">
             @auth
                 <form method="POST" action="{{ url('/likes/' . $painting->id) }}" class="mb-4">

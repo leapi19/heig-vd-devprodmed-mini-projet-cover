@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Post;
+use App\Models\Painting;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PostSeeder extends Seeder
+class PaintingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -59,7 +59,7 @@ class PostSeeder extends Seeder
 
         // Créer 10 œuvres, changeé tous les contents en description, ajoute img_path et appel pour exectuer seeder
         foreach (range(1, 10) as $index) {
-            Post::create([
+            Painting::create([
                 'title' => $titles[$index - 1] ?? 'Œuvre ' . $index,
                 'description' => $descriptions[$index - 1] ?? 'Une œuvre intéressante.',
                 'image_path' => 'artworks/placeholder-' . $index . '.jpg', // Image fictive pour test
