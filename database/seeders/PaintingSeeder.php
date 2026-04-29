@@ -64,6 +64,7 @@ class PaintingSeeder extends Seeder
                 'description' => $descriptions[$index - 1] ?? 'Une œuvre intéressante.',
                 'image_path' => 'artworks/placeholder-' . $index . '.jpg', // Image fictive pour test
                 'user_id' => $users->random()->id, // Assigner à un utilisateur aléatoire
+                'category' => collect(['acrylique', 'gouache', 'aquarelle', 'huile'])->random(),
             ]);
         }
     }
