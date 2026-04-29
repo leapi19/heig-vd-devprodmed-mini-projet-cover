@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('dimensions')->nullable();
             $table->unsignedSmallInteger('year')->nullable(); //unsigned pour ne pas aller dans les négatifs
             $table->timestamps();
+            $table->enum('category', ['acrylique', 'gouache', 'aquarelle', 'huile'])->nullable();
         });
     }
 

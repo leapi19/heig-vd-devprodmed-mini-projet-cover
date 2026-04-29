@@ -73,6 +73,12 @@
             </p>
         </div>
 
+        @if ($painting->category)
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+        Catégorie : <span class="font-semibold">{{ ucfirst($painting->category) }}</span>
+    </p>
+    @endif
+
         <div class="mb-4">
             @if ($painting->dimensions)
                 <p class="text-sm text-gray-600 dark:text-gray-400">

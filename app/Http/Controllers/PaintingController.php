@@ -39,6 +39,7 @@ class PaintingController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
             'dimensions' => 'nullable|string|max:50',
             'year' => 'nullable|integer|min:1800|max:2026',
+            'category' => 'nullable|in:acrylique,gouache,aquarelle,huile',
         ]);
 
         $user = $request->user();
@@ -48,6 +49,8 @@ class PaintingController extends Controller
         $painting->description = $validated['description'];
         $painting->dimensions = $validated['dimensions'];
         $painting->year = $validated['year'];
+        $painting->category = $validated['category'];
+
         // Upload de l'image
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('artworks', 'public');
@@ -106,6 +109,7 @@ class PaintingController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             'dimensions' => 'nullable|string|max:50',
             'year' => 'nullable|integer|min:1800|max:2026',
+            'category' => 'nullable|in:acrylique,gouache,aquarelle,huile',
         ]);
 
         $painting = Painting::findOrFail($id);
@@ -116,6 +120,7 @@ class PaintingController extends Controller
         $painting->description = $validated['description'];
         $painting->dimensions = $validated['dimensions'];
         $painting->year = $validated['year'];
+        $painting->category = $validated['category'];
 
         // Gestion de la nouvelle image
         if ($request->hasFile('image')) {

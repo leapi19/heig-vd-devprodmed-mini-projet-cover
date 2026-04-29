@@ -34,6 +34,11 @@
                     <h2 class="text-xl font-bold text-gray-900 dark:text-white">
                         {{ $painting->title }}
                     </h2>
+                    @if ($painting->category)
+    <span class="inline-block mt-1 px-2 py-0.5 bg-teal-100 dark:bg-purple-900 text-teal-800 dark:text-purple-200 rounded-full text-xs">
+        {{ ucfirst($painting->category) }}
+    </span>
+@endif
                 </a>
             @endif
         </header>
